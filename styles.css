@@ -202,6 +202,35 @@ footer {
     margin-top: 20px; /* Space above this description for clarity */
 }
 
+
+
+@media (max-width: 800px) {
+    .comic-display {
+        flex-direction: column;
+        align-items: center; /* Center children vertically */
+        margin: 20px 0; /* Adjust margins to prevent horizontal scrolling */
+    }
+
+    .comic-slideshow {
+        margin-right: 0; /* Remove right margin on mobile */
+        width: 100%; /* Or another percentage/fixed width that fits your design */
+        height: 300px; /* Keep the aspect ratio of the content */
+    }
+
+    .comic-description {
+        order: 1; /* Ensure descriptions come after slideshow */
+        margin: 20px 0;
+    }
+
+    .comic-slideshow.tall {
+        margin-right: 0;
+        width: 100%;
+        height: 340px;
+    }
+}
+
+
+
 .teaching-intro {
     font-size: 1.1em;
     text-align: left;
@@ -258,6 +287,15 @@ footer {
 @media (max-width: 900px) {
     .gallery-item {
         width: calc(50% - 10px); /* two images per row */
+        padding-top: calc(50% - 10px);
+    }
+}
+
+
+@media (max-width: 600px) {
+    .gallery-item {
+        width: 100%; /* two images per row */
+        padding-top: 100%;
     }
 }
 
@@ -294,22 +332,6 @@ footer {
     width: 100%;
     text-align: center;
 }
-
-
-@media (max-width: 800px) {
-    .comic-display {
-        flex-direction: column;
-    }
-
-    .comic-slideshow {
-    margin: 0 auto;
-    }
-    
-    .comic-description {
-        margin: 30px 0;
-    }
-}
-
 
 
 :root {
