@@ -1,0 +1,467 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "garamond-premier-pro", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(47, 47, 47);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Use viewport height to ensure the footer can stick to the bottom */
+
+}
+
+a, a:visited {
+    text-decoration: none; /* Removes the underline */
+    color: #5f99f6; /* A nice pastel blue color */
+}
+
+a:hover {
+    color: #8cbcff; /* A lighter blue for hover */
+}
+
+
+header, footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.nav-list li {
+    margin: 0 20px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #a5a5a5; /* Light grey */
+    transition: color 0.3s ease; /* Transition for the color change */
+}
+
+.nav-list li a:hover, .nav-list li a:focus {
+    color: #636363; /* Darker grey */
+}
+
+main {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.portrait {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    display: block; 
+    margin: 30px auto 50px;
+    object-fit: cover;
+}
+
+
+.intro-text {
+    margin: 0 auto 20px;
+    max-width: 500px;
+    font-size: 1.2em;
+}
+.intro-text p {
+    margin: 20px 0;
+}
+
+footer {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: #f8f9fa; /* Light grey background, adjust color as needed */
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list li {
+        margin: 4px 0;
+    }
+}
+
+/* comics.html */
+
+.comic-section h2 {
+    text-align: left;
+    margin: 20px 0;
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.comic-display {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.comic-slideshow {
+    flex: 1 350px 350px;
+    margin-right: 20px;
+    width: 350px;
+    height: 300px;
+    position: relative;
+    background-color: black;
+    box-shadow: var(--shadow-elevation-medium);
+    border-radius: 8px;
+}
+
+.comic-slideshow.tall {
+    flex: 1 350px 350px;
+    margin-right: 20px;
+    width: 350px;
+    height: 380px;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute; /* Allows slides to stack on top of each other */
+    top: 0;
+    left: 0;
+    display: block; /* Always display block */
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    border-radius: 8px;
+}
+
+.slides.current {
+    opacity: 1; /* Fully visible when current */
+}
+
+
+.slides.top {
+    object-position: top;
+}
+
+.comic-description.inline {
+    flex: 2 1 40%; /* Takes up more space but allows shrinking */
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.comic-description.align-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 0;
+}
+
+.comic-description p {
+    margin: 10px 0;
+}
+
+.comic-description.italic {
+    font-style: italic;
+}
+
+.comic-description.below {
+    flex-basis: 100%; /* Takes full width of the container */
+    text-align: left;
+    font-size: 1.1em;
+    margin-top: 20px; /* Space above this description for clarity */
+}
+
+.teaching-intro {
+    font-size: 1.1em;
+    text-align: left;
+}
+
+.teaching-intro p {
+    margin: 10px 0;
+}
+
+
+/* Teaching */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    width: calc(33.333% - 10px); /* three images per row */
+    cursor: pointer;
+    overflow: hidden; /* Ensures nothing extends beyond the item bounds */
+    padding-top: calc(33.333% - 10px); /* This creates a square aspect ratio */
+    margin: 5px;
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area, cropping as needed */
+}
+.label {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    padding: 20px 0;
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 900px) {
+    .gallery-item {
+        width: calc(50% - 10px); /* two images per row */
+    }
+}
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-content {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay-thumbnails {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+
+@media (max-width: 800px) {
+    .comic-display {
+        flex-direction: column;
+    }
+
+    .comic-slideshow {
+    margin: 0 auto;
+    }
+    
+    .comic-description {
+        margin: 30px 0;
+    }
+}
+
+
+
+:root {
+    --shadow-color: 0deg 0% 70%;
+    --shadow-elevation-low:
+      0.3px 0.4px 0.6px hsl(var(--shadow-color) / 0.27),
+      0.4px 0.6px 0.8px -1.2px hsl(var(--shadow-color) / 0.27),
+      1px 1.4px 1.9px -2.5px hsl(var(--shadow-color) / 0.27);
+    --shadow-elevation-medium:
+      0.3px 0.4px 0.6px hsl(var(--shadow-color) / 0.28),
+      0.8px 1.2px 1.6px -0.8px hsl(var(--shadow-color) / 0.28),
+      2.1px 3px 4.1px -1.7px hsl(var(--shadow-color) / 0.28),
+      5px 7.2px 9.9px -2.5px hsl(var(--shadow-color) / 0.28);
+    --shadow-elevation-high:
+      0.3px 0.4px 0.6px hsl(var(--shadow-color) / 0.26),
+      1.3px 1.9px 2.6px -0.4px hsl(var(--shadow-color) / 0.26),
+      2.4px 3.5px 4.8px -0.7px hsl(var(--shadow-color) / 0.26),
+      4px 5.7px 7.8px -1.1px hsl(var(--shadow-color) / 0.26),
+      6.3px 9px 12.4px -1.4px hsl(var(--shadow-color) / 0.26),
+      9.8px 14.1px 19.3px -1.8px hsl(var(--shadow-color) / 0.26),
+      14.8px 21.3px 29.2px -2.1px hsl(var(--shadow-color) / 0.26),
+      21.8px 31.4px 43px -2.5px hsl(var(--shadow-color) / 0.26);
+  }
+
+
+  /* Resume */
+
+  .resume-summary {
+    font-size: 1.1em;
+    font-family: 'garamond-premier-pro', serif;
+    text-align: left;
+  }
+  .resume {
+    font-family: 'Crimson Text', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .resume {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+  }
+  
+  .header {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  
+  .name {
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+  }
+  
+  .contact-info {
+    font-size: 12pt;
+    margin-top: 5px;
+    color: #666;
+  }
+  
+  .summary {
+    margin-bottom: 30px;
+    font-size: 12pt;
+    text-align: justify;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section-title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
+  .job {
+    margin-bottom: 20px;
+  }
+  
+  .job-title,
+  .job-company {
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+  }
+  
+  .job-date {
+    font-size: 12pt;
+    margin-top: 3px;
+    color: #666;
+  }
+  
+  .job-details {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-left: 20px;
+  }
+  
+  .job-details li {
+    margin-bottom: 5px;
+  }
+  
+  .skills-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .skills-list li {
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 12pt;
+  }
+  
+  .school {
+    margin-bottom: 15px;
+  }
+  
+  .school-name {
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+  }
+  
+  .school-location {
+    font-size: 12pt;
+    margin-top: 3px;
+    color: #666;
+  }
+  
+  .school-degree {
+    font-size: 12pt;
+    margin-top: 3px;
+    color: #666;
+  }

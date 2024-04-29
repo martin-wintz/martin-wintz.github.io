@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching | Martin Wintz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nod1vng.css">
+</head>
+<body>
+    <header>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="comics.html">Comics</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="tech.html">Coding</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="teaching-intro"><p>From the moment I started to take drawing seriously, I dreamt of one day being able to teach. I am primarily self-taught, and my own progress of going from a complete amateur to a professional-grade illustrator in just two years are my primary credentials. My analytical approach, resourcefulness, and exposure to a vast diversity of courses, books, and tutorials give me the ability to teach effectively and in a manner that is specifically tailored to each individual.</p>
+        <p>I offer private tutoring in the form of weekly, 60 minute sessions. I specialize in teaching basic sketching proficiency, figure and anatomy, character design and acting, and sequential art. My tutoring sessions are structured around 8 week modules, with built-in flexibility to address the weaknesses and build up the strengths of my students. I am comfortable teaching both western and manga/anime art styles.</p> 
+        <p>Please send your inquiries to <a href="mailto:martin.wintz@gmail.com">martin.wintz@gmail.com</a> to schedule a free consultation and see if we would be a good fit.</p>
+        </section>
+        <div class="gallery">
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="assets/characterdesign.jpg" alt="Gallery Image 4">
+                <div class="label">Character Design</div>
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="assets/character.jpg" alt="Gallery Image 1">
+                <div class="label">Character Posing</div>
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="assets/expressions.jpg" alt="Gallery Image 4">
+                <div class="label">Character Expressions</div>
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="assets/anatomy.jpg" alt="Gallery Image 2">
+                <div class="label">Constructive Anatomy</div>
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="assets/environments.jpg" alt="Gallery Image 3">
+                <div class="label">Environment Painting</div>
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="assets/traditional.jpg" alt="Gallery Image 4">
+                <div class="label">Traditional Sketching</div>
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="assets/lightandcolor.jpg" alt="Gallery Image 4">
+                <div class="label">Light & Color</div>
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="assets/clothing.jpg" alt="Gallery Image 4">
+                <div class="label">Clothing</div>
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="assets/values.jpg" alt="Gallery Image 4">
+                <div class="label">Values</div>
+            </div>
+        </div>
+        <!-- Overlay for image viewing -->
+        <div id="overlay" style="display:none;">
+            <span class="close" onclick="closeOverlay()">&times;</span>
+            <img class="overlay-content" id="overlayImage">
+            <div class="overlay-thumbnails">
+                <!-- Thumbnails here -->
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <p>© Martin Wintz 2024</p>
+    </footer>
+</body>
+</html>
