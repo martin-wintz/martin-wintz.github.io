@@ -20,8 +20,22 @@ const createSlideshow = (element, durationPerSlide) => {
     cycleSlides(); // Initialize the slideshow
 };
 
+
+
 $(document).ready(() => {
     createSlideshow("#comicSlideshow", 3000);
     createSlideshow("#colonyShow", 3500);
     createSlideshow("#dailyShow", 2500);
+
+    // Event listener for thumbnail clicks
+    $('.thumbnail-gallery img').on('click', function() {
+        // Get the number from the ID of the clicked thumbnail
+        var num = this.id.split('_')[1];
+
+        // Remove "current" class from all gallery images
+        $('.gallery-display img').removeClass('current');
+
+        // Add "current" class to the corresponding gallery image
+        $('#sample_' + num).addClass('current');
+    });
 });
