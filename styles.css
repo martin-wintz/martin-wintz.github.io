@@ -550,3 +550,23 @@ footer {
     text-align: center;
     margin-bottom: 20px;
   }
+
+  #returnToTop {
+    position: fixed; /* Keeps the button at the same place on the screen */
+    top: 20px;    /* Distance from the bottom */
+    right: 20px;     /* Distance from the right */
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #333; /* Dark background for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1000;   /* Makes sure the button is on top of other content */
+    opacity: 0.7;    /* Slightly transparent */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+#returnToTop:hover {
+    opacity: 1; /* Fully opaque on hover */
+}

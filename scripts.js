@@ -38,4 +38,19 @@ $(document).ready(() => {
         // Add "current" class to the corresponding gallery image
         $('#sample_' + num).addClass('current');
     });
+
+    // Check the scroll position and toggle button visibility
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) { // Shows the button after 200px of scroll
+            $('#returnToTop').fadeIn();
+        } else {
+            $('#returnToTop').fadeOut();
+        }
+    });
+
+    // Smooth scroll to top on click
+    $('#returnToTop').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 'slow'); // Smooth scroll to the top of the document
+        return false;
+    });
 });
